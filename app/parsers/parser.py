@@ -1,4 +1,5 @@
 import asyncio
+import re
 from contextlib import asynccontextmanager
 
 from playwright.async_api import async_playwright, Page, Browser
@@ -54,3 +55,8 @@ class Parser:
         for _ in range(max_scrolls):
             await page.evaluate(f"window.scrollBy(0, {step});")
             await asyncio.sleep(delay)
+
+
+    @staticmethod
+    def _clear_price(price: str) -> str:
+        return re.sub(rf"[^\d]", "", price) if price else None
