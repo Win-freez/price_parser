@@ -6,6 +6,14 @@ from playwright.async_api import async_playwright, Page, Browser
 
 
 class Parser:
+    def __init__(
+            self,
+            word: str,
+            delay: float = 0.5,
+    ):
+        self.word = word
+        self._delay = delay
+
     @classmethod
     @asynccontextmanager
     async def get_browser(cls):
@@ -43,7 +51,7 @@ class Parser:
 
 
     @staticmethod
-    async def _scroll_step_by_step(page, step: int = 500, delay: float = 1.0, max_scrolls: int = 30) -> None:
+    async def _scroll_step_by_step(page, step: int = 500, delay: float = 0.3, max_scrolls: int = 5) -> None:
         """
         Прокручивает страницу вниз по шагам (например, 500px за раз).
 
@@ -56,7 +64,17 @@ class Parser:
             await page.evaluate(f"window.scrollBy(0, {step});")
             await asyncio.sleep(delay)
 
-
     @staticmethod
-    def _clear_price(price: str) -> str:
-        return re.sub(rf"[^\d]", "", price) if price else None
+    def _clear_price(price: str) -> float | None:
+        """
+        Очищает строку с ценой и возвращает float.
+        Например: "797.26 ₽/шт" -> 797.26
+        """
+        if not price:
+            return None
+        # Оставляем только цифры и точку
+        cleaned = re.sub(r"[^\d.,]", "", price)
+        try:
+            return float(cleaned)
+        except ValueError:
+            return None
