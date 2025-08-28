@@ -9,7 +9,8 @@ readme = "README.md"
 requires-python = ">=3.12,<4.0"
 
 dependencies = [
-    "httpx (>=0.28.1,<0.29.0)"
+    "httpx (>=0.28.1,<0.29.0)",
+    "pydantic (>=2.11.7,<3.0.0)"
 ]
 
 [build-system]
@@ -19,3 +20,5 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.parsing.dependencies]
 playwright = "^1.54.0"
 playwright-stealth = "^2.0.0"
+beautifulsoup4 = "^4.13.5"
+lxml = "^6.0.1"
