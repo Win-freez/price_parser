@@ -1,54 +1,57 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import List
+from typing import List, TYPE_CHECKING
 
-from pydantic import BaseModel, ConfigDict, HttpUrl, Field
+from pydantic import BaseModel, ConfigDict, HttpUrl
+
+if TYPE_CHECKING:
+    from app.schemas.positiv.category import CategorySchema
 
 
 class BaseConfigModel(BaseModel):
     model_config = ConfigDict(from_attributes=True, extra='ignore')
 
 
-class BalanceInfo(BaseModel):
+class BalanceInfoSchema(BaseModel):
     count: str
     unit: str
     residual: str
 
 
-class AmountInfo(BaseModel):
+class AmountInfoSchema(BaseModel):
     value: str
     currency: str
 
 
-class Info1C(BaseModel):
+class Info1CSchema(BaseModel):
     product_id: str
     row_id: str
     store_id: str
     name: str
-    balance: BalanceInfo
-    amount: AmountInfo
+    balance: BalanceInfoSchema
+    amount: AmountInfoSchema
     vendorCode: str
     code: str
     links: str
 
 
-class StoreInfo1C(BaseModel):
+class StoreInfo1CSchema(BaseModel):
     name: str
     storeId: str
 
 
-class Store(BaseModel):
+class StoreSchema(BaseModel):
     id: str
     public_id: str
     storeId: str
     name: str
-    info_1c: StoreInfo1C
+    info_1c: StoreInfo1CSchema
     createdAt: datetime
     updatedAt: datetime
 
 
-class Attribute(BaseModel):
+class AttributeSchema(BaseModel):
     filterId: str
     valueId: str
     value: str
@@ -60,7 +63,7 @@ class Attribute(BaseModel):
     step: int
 
 
-class Product(BaseConfigModel):
+class ProductSchema(BaseConfigModel):
     public_id: str
     name: str
     slug: str
@@ -84,29 +87,30 @@ class Product(BaseConfigModel):
     links1c: str
     isPublished: bool
     publishedDate: datetime
-    info_1c: Info1C
+    info_1c: Info1CSchema
     unpublishedDate: datetime | None
     createdAt: datetime
     nameVector: str
     updatedAt: datetime
-    store: Store
-    category: Category
-    attributes: list[Attribute]
+    store: StoreSchema
+    category: CategorySchema
+    attributes: list[AttributeSchema]
 
 
-class Category(BaseConfigModel):
+class ProductCategorySchema(BaseConfigModel):
     id: str
     public_id: str
-    name: str
+    categoryId: str
+    code: str
     slug: str
-    imageUrl: HttpUrl | None
-    iconUrl: HttpUrl | None
-    parent_id: str | None
+    name: str
+    description: str | None = None
+    snippet: str | None = None
+    imageUrl: HttpUrl | None = None
+
+    price: str
+    count: int
+
+    isNew: bool
+    isPopular: bool
     isPublished: bool
-    priority: int
-    publishedDate: datetime
-    unpublishedDate: datetime | None
-    createdAt: datetime | None
-    updatedAt: datetime | None
-    children: list["Category"] = Field(default_factory=list)
-    products: list["Product"] = Field(default_factory=list)
