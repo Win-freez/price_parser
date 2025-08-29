@@ -1,7 +1,7 @@
 import asyncio
-
+import httpx
 from app.parsers.positiv.positiv import PositiveParserAPI
-
+from openpyxl import Workbook
 
 async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
     wb = Workbook()
@@ -17,7 +17,7 @@ async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
     ]
     ws.append(headers)
 
-    async for category_name, products in parser.get_all_products_short_info():
+    async for category_name, products in parser.get_all_products_full_info():
         ws.append([f"{category_name}"] + [""] * (len(headers) - 1))
         for product in products:
             row = [
@@ -57,7 +57,6 @@ async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
 
 
 async def main():
-    import httpx
     async with httpx.AsyncClient() as client:
         parser = PositiveParserAPI(client=client, max_concurrent=10)
         await save_products_to_excel(parser, "Товары.xlsx")

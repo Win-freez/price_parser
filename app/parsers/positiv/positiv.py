@@ -53,6 +53,7 @@ class PositiveParserAPI:
             except Exception as e:
                 logger.exception(f"Неожиданная ошибка при запросе {url}: {e}")
 
+
     async def get_categories(
             self,
     ) -> dict[str, CategorySchema]:
