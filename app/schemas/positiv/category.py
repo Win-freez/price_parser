@@ -1,3 +1,4 @@
+from __future__ import annotations
 from datetime import datetime
 
 from pydantic import BaseModel, HttpUrl, Field
@@ -18,3 +19,5 @@ class CategorySchema(BaseModel):
     createdAt: datetime | None
     updatedAt: datetime | None
     children: list["CategorySchema"] = Field(default_factory=list)
+
+CategorySchema.model_rebuild()

@@ -4,10 +4,7 @@ from datetime import datetime
 from typing import List, TYPE_CHECKING
 
 from pydantic import BaseModel, ConfigDict, HttpUrl
-
-if TYPE_CHECKING:
-    from app.schemas.positiv.category import CategorySchema
-
+from app.schemas.positiv.category import CategorySchema
 
 class BaseConfigModel(BaseModel):
     model_config = ConfigDict(from_attributes=True, extra='ignore')
@@ -96,6 +93,7 @@ class ProductSchema(BaseConfigModel):
     category: CategorySchema
     attributes: list[AttributeSchema]
 
+ProductSchema.model_rebuild()
 
 class ProductCategorySchema(BaseConfigModel):
     id: str
