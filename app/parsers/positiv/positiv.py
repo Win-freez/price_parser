@@ -1,11 +1,11 @@
 import asyncio
 import logging
 from asyncio import create_task, gather
-from pprint import pprint
 from typing import Any, AsyncGenerator, cast
 
-import httpx
 from httpx import AsyncClient, TimeoutException, HTTPError
+from pydantic import ValidationError
+from tenacity import retry, stop_after_attempt, stop_after_delay, after_log
 
 from app.schemas.positiv.category import CategorySchema
 from app.schemas.positiv.product import ProductCategorySchema, ProductSchema
@@ -32,6 +32,11 @@ class PositiveParserAPI:
         self.semaphore = asyncio.Semaphore(max_concurrent)
         self.client = client
 
+    @retry(
+        stop=stop_after_attempt(3),
+        reraise=True,
+        after=after_log(logger, logging.WARNING)
+           )
     async def fetch(
             self,
             url: str,
@@ -41,16 +46,19 @@ class PositiveParserAPI:
         """Асинхронный запрос с ограничением по семафору и логированием"""
         async with self.semaphore:
             try:
-                r = await self.client.get(url, params=params, timeout=15.0)
+                r = await self.client.get(url, params=params, timeout=15)
                 r.raise_for_status()
                 await asyncio.sleep(delay)
                 return r.json()
             except TimeoutException:
                 logger.error(f"Timeout при запросе {url}")
+                raise
             except HTTPError as e:
                 logger.error(f"Ошибка HTTP {e} при запросе {url}")
+                raise
             except Exception as e:
                 logger.exception(f"Неожиданная ошибка при запросе {url}: {e}")
+
 
     async def get_categories(
             self,
@@ -58,18 +66,33 @@ class PositiveParserAPI:
         """Забрать все категории"""
         logger.info("Получение информации о всех категориях")
         categories = await self.fetch(f"{self.BASE_URL}/category")
-        categories_gen = (CategorySchema(**category) for category in categories)
-        categories_dict = {category.public_id: category for category in categories_gen}
+        categories_dict = {}
+        for raw in categories:
+            try:
+                category = CategorySchema(**raw)
+                categories_dict[category.public_id] = category
+            except ValidationError as e:
+                logger.error("Ошибка валидации категории: %s", e)
         return categories_dict
+
 
     async def fetch_product_full_info(
             self,
             product_id: str
-    ) -> ProductSchema:
+    ) -> ProductSchema | None:
         """Забрать полные данные по товару"""
         logger.info("Получение всех данных о товаре c product_id: %s", product_id)
         product = await self.fetch(f"{self.BASE_URL}/product/{product_id}")
-        return ProductSchema(**product)
+        if not product:
+            logger.error(
+                "Ошибка данных для product_id=%s: %s",
+                product_id,
+            )
+            return None
+
+        return self._safe_validate(ProductSchema, product, context=product_id)
+
+
 
     async def fetch_products_by_category(
             self,
@@ -89,13 +112,18 @@ class PositiveParserAPI:
             )
             return []
 
-        return [ProductCategorySchema(**product) for product in products]
+        result = [
+            self._safe_validate(ProductCategorySchema, product, context=public_id)
+            for product in products
+        ]
+        return result
+
 
     async def walk_categories(
             self,
             category: CategorySchema,
             depth: int = 0
-    ):
+    ) -> AsyncGenerator[tuple[int, str, list[ProductSchema]]]:
         """Асинхронно обходит категорию и её подкатегории, собирает товары"""
         logger.debug(
             "Обрабатываю категорию '%s' на глубине %s",
@@ -120,14 +148,15 @@ class PositiveParserAPI:
             for p in products:
                 if isinstance(p, Exception):
                     logger.exception("Ошибка при обработке товара", exc_info=p)
-                else:
+                elif p is not None:
                     filtered_products.append(p)
 
             logger.info(
                 "В категории '%s' (глубина %s) получено %s товаров (ошибок: %s)",
                 category.name, depth, len(filtered_products), len(products) - len(filtered_products)
             )
-            yield depth, category.name, filtered_products
+
+            yield depth, category.name, cast(list[ProductSchema],filtered_products)
 
     @staticmethod
     def make_categories_with_children(
@@ -136,7 +165,14 @@ class PositiveParserAPI:
 
         for public_id, category in categories_dict.items():
             if category.parent_id:
-                categories_dict[category.parent_id].children.append(category)
+                parent = categories_dict.get(category.parent_id)
+                if parent:
+                    parent.children.append(category)
+                else:
+                    logger.warning(
+                        "Не найден родитель с public_id=%s для категории %s",
+                        category.parent_id, category.name
+                    )
         return categories_dict
 
     def _create_tasks_for_categories(self, categories: dict[str, CategorySchema]) -> list[asyncio.Task]:
@@ -159,3 +195,14 @@ class PositiveParserAPI:
             )
             tasks.append(task)
         return tasks
+
+    @staticmethod
+    def _safe_validate(schema, data, context=""):
+        try:
+            return schema(**data)
+        except ValidationError as e:
+            logger.error("Ошибка валидации %s: %s", context, e)
+        except TypeError as e:
+            logger.error("Ошибка данных %s: %s", context, e)
+        return None
+

@@ -1,14 +1,14 @@
 import asyncio
-from pprint import pprint
-
-from openpyxl import Workbook
-from openpyxl.styles import Font
-from app.parsers.positiv.positiv import PositiveParserAPI
-import httpx
 from pathlib import Path
 
+import httpx
+from openpyxl import Workbook
+from openpyxl.styles import Font
+
+from app.parsers.positiv.positiv import PositiveParserAPI
 
 BASE_DIR = Path(__file__).parent.parent.parent.parent
+
 
 async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
     wb = Workbook()
@@ -49,11 +49,12 @@ async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
                         product.price,
                         product.currency,
                         product.links1c,
-                        product.publishedDate.isoformat() if product.publishedDate else "",
-                        product.unpublishedDate.isoformat() if product.unpublishedDate else "",
-                        product.createdAt.isoformat() if product.createdAt else "",
+                        product.publishedDate.strftime("%d-%m-%Y") if product.publishedDate else "",
+                        product.unpublishedDate.strftime("%d-%m-%Y") if product.unpublishedDate else "",
+                        product.createdAt.strftime("%d-%m-%Y") if product.createdAt else "",
                     ]
                     ws.append(row)
+
                 print(f"Записаны {len(products)} товаров категории {category_name} на листе {main_category.name}")
 
     await asyncio.gather(*(process_category(c) for c in main_categories))
@@ -67,5 +68,6 @@ async def main():
     async with httpx.AsyncClient() as client:
         parser = PositiveParserAPI(client=client, max_concurrent=100)
         await save_products_to_excel(parser, filename="positiv_products.xlsx")
+
 
 asyncio.run(main())
