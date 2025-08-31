@@ -20,4 +20,5 @@ class CategorySchema(BaseModel):
     updatedAt: datetime | None
     children: list["CategorySchema"] = Field(default_factory=list)
 
+
 CategorySchema.model_rebuild()

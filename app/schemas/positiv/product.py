@@ -13,7 +13,7 @@ class BaseConfigModel(BaseModel):
 class BalanceInfoSchema(BaseModel):
     count: str
     unit: str
-    residual: str
+    residual: str | None = None
 
 
 class AmountInfoSchema(BaseModel):

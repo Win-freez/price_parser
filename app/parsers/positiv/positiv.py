@@ -1,6 +1,7 @@
 import asyncio
 import logging
-from asyncio import create_task
+from asyncio import create_task, gather
+from pprint import pprint
 from typing import Any, AsyncGenerator, cast
 
 import httpx
@@ -26,10 +27,8 @@ class PositiveParserAPI:
     def __init__(
             self,
             client: AsyncClient,
-            limit: int = 30,
             max_concurrent: int = 10
     ) -> None:
-        self.limit = limit
         self.semaphore = asyncio.Semaphore(max_concurrent)
         self.client = client
 
@@ -53,7 +52,6 @@ class PositiveParserAPI:
             except Exception as e:
                 logger.exception(f"Неожиданная ошибка при запросе {url}: {e}")
 
-
     async def get_categories(
             self,
     ) -> dict[str, CategorySchema]:
@@ -76,7 +74,7 @@ class PositiveParserAPI:
     async def fetch_products_by_category(
             self,
             public_id: str
-    ) -> dict[str, list[ProductCategorySchema]]:
+    ) -> list[ProductCategorySchema]:
         logger.info(
             "Получение всех продуктов из категории с public_id: %s",
             public_id
@@ -89,68 +87,57 @@ class PositiveParserAPI:
                 "Не удалось получить продукты для категории %s",
                 public_id
             )
-            return {}
+            return []
 
-        return {public_id: [ProductCategorySchema(**product) for product in products]}
+        return [ProductCategorySchema(**product) for product in products]
 
-    async def get_all_products_short_info(self) -> AsyncGenerator[tuple[str, list[ProductCategorySchema]]]:
-        all_categories = await self.get_categories()
-        categories_without_children = self._make_categories_without_children(all_categories)
-        tasks = self._create_tasks_for_categories(categories_without_children)
-        for task in asyncio.as_completed(tasks):
-            try:
-                products_dict = await task
-                if not products_dict:
-                    logger.warning("Отсутсвует товар")
+    async def walk_categories(
+            self,
+            category: CategorySchema,
+            depth: int = 0
+    ):
+        """Асинхронно обходит категорию и её подкатегории, собирает товары"""
+        logger.debug(
+            "Обрабатываю категорию '%s' на глубине %s",
+            category.name, depth
+        )
+        if category.children:
+            logger.info(
+                "Категория '%s' (глубина %s) содержит %s подкатегорий",
+                category.name, depth, len(category.children)
+            )
+            yield depth, category.name, []
+
+            for inner_category in category.children:
+                async for node in self.walk_categories(category=inner_category, depth=depth + 1):
+                    yield node
+
+        else:
+            products_short_info = await self.fetch_products_by_category(public_id=category.public_id)
+            tasks = self._create_tasks_for_products(products_short_info)
+            products = await gather(*tasks, return_exceptions=True)
+            filtered_products = []
+            for p in products:
+                if isinstance(p, Exception):
+                    logger.exception("Ошибка при обработке товара", exc_info=p)
                 else:
-                    for public_id, products in products_dict.items():
-                        category_name = all_categories[public_id].name
-                        logger.info(
-                            "Получены значения по категории: %s, кол-во продуктов: %s",
-                            category_name,
-                            len(products)
-                        )
-                        yield category_name, products
+                    filtered_products.append(p)
 
-            except (httpx.RequestError, httpx.HTTPStatusError):
-                logger.exception("Ошибка в запросе HTTP")
-            except asyncio.TimeoutError:
-                logger.exception("Вышло время")
-            except KeyError:
-                logger.exception("Не найдено значение по ключу")
-            except Exception:
-                logger.exception("Непридведенная ошибка")
-
-    async def get_all_products_full_info(self) -> AsyncGenerator[tuple[str, list[ProductSchema]], None]:
-        async for category, products in self.get_all_products_short_info():
-            tasks = self._create_tasks_for_products(products)
-            full_products = await asyncio.gather(*tasks, return_exceptions=True)
-
-            full_products_clean = []
-            for product in full_products:
-                if isinstance(product, Exception):
-                    logger.exception(
-                        f"Ошибка при получении полного товара: %s",
-                        product
-                    )
-                else:
-                    full_products_clean.append(cast(ProductSchema, product))
-                    logger.info("Данные по товару: %s успешно получены", product)
-
-            yield category, full_products_clean
+            logger.info(
+                "В категории '%s' (глубина %s) получено %s товаров (ошибок: %s)",
+                category.name, depth, len(filtered_products), len(products) - len(filtered_products)
+            )
+            yield depth, category.name, filtered_products
 
     @staticmethod
-    def _make_categories_without_children(
+    def make_categories_with_children(
             categories_dict: dict[str, CategorySchema]
     ) -> dict[str, CategorySchema]:
+
         for public_id, category in categories_dict.items():
             if category.parent_id:
                 categories_dict[category.parent_id].children.append(category)
-        return {
-            category.name: category
-            for public_id, category in categories_dict.items()
-            if not category.children
-        }
+        return categories_dict
 
     def _create_tasks_for_categories(self, categories: dict[str, CategorySchema]) -> list[asyncio.Task]:
         """Создать задачи для получения продуктов по категориям"""

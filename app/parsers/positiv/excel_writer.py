@@ -1,65 +1,71 @@
 import asyncio
-import httpx
-from app.parsers.positiv.positiv import PositiveParserAPI
+from pprint import pprint
+
 from openpyxl import Workbook
+from openpyxl.styles import Font
+from app.parsers.positiv.positiv import PositiveParserAPI
+import httpx
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).parent.parent.parent.parent
 
 async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
     wb = Workbook()
-    ws = wb.active
-    ws.title = "Products"
+    wb.remove(wb.active)  # удаляем стандартный пустой лист
 
     headers = [
-        "Категория", "public_id", "name", "slug", "imageUrl", "vendorCode", "code",
-        "description", "snippet", "monthWarranty", "count", "unitOfMeasurement",
-        "isAvailable", "stockStatus", "price", "currency", "isNew",
-        "isPopular", "isSeasonal", "isGift", "links1c", "isPublished",
-        "publishedDate", "unpublishedDate", "createdAt"
+        "Категория", "public_id", "Имя", "Ссылка на картинку", "Код",
+        "Описание", "Остатки", "Ед.Измерения",
+        "Доступность", "Цена", "Валюта",
+        "Ссылка 1С", "Дата публикации", "Дата снятия публикации", "Дата создания"
     ]
-    ws.append(headers)
 
-    async for category_name, products in parser.get_all_products_full_info():
-        ws.append([f"{category_name}"] + [""] * (len(headers) - 1))
-        for product in products:
-            row = [
-                category_name,
-                product.public_id,
-                product.name,
-                product.slug,
-                str(product.imageUrl) if product.imageUrl else "",
-                product.vendorCode,
-                product.code,
-                product.description,
-                product.snippet,
-                product.monthWarranty or "",
-                product.count,
-                product.unitOfMeasurement,
-                product.isAvailable,
-                product.stockStatus,
-                product.price,
-                product.currency,
-                product.isNew,
-                product.isPopular,
-                product.isSeasonal,
-                product.isGift,
-                product.links1c,
-                product.isPublished,
-                product.publishedDate.isoformat() if product.publishedDate else "",
-                product.unpublishedDate.isoformat() if product.unpublishedDate else "",
-                product.createdAt.isoformat() if product.createdAt else "",
-            ]
-            ws.append(row)
+    categories = await parser.get_categories()
+    categories_with_children = parser.make_categories_with_children(categories)
+    main_categories = (c for c in categories_with_children.values() if c.parent_id is None)
 
-        print(f"Записаны {len(products)} товаров категории {category_name}")
+    async def process_category(main_category):
+        ws = wb.create_sheet(title=main_category.name[:31])  # имя листа не длиннее 31 символа
+        ws.append(headers)
 
-    wb.save(filename)
+        async for depth, category_name, products in parser.walk_categories(main_category):
+            indent = "    " * depth
+            ws.append([f"{indent}{category_name}"])
+            ws.cell(row=ws.max_row, column=1).font = Font(bold=True)
+
+            if products:
+                for product in products:
+                    row = [
+                        category_name,
+                        product.public_id,
+                        product.name,
+                        str(product.imageUrl) if product.imageUrl else "",
+                        product.code,
+                        product.description,
+                        product.count,
+                        product.unitOfMeasurement,
+                        product.isAvailable,
+                        product.price,
+                        product.currency,
+                        product.links1c,
+                        product.publishedDate.isoformat() if product.publishedDate else "",
+                        product.unpublishedDate.isoformat() if product.unpublishedDate else "",
+                        product.createdAt.isoformat() if product.createdAt else "",
+                    ]
+                    ws.append(row)
+                print(f"Записаны {len(products)} товаров категории {category_name} на листе {main_category.name}")
+
+    await asyncio.gather(*(process_category(c) for c in main_categories))
+
+    wb.save(BASE_DIR / filename)
     wb.close()
     print(f"Excel сохранён в {filename}")
 
 
 async def main():
     async with httpx.AsyncClient() as client:
-        parser = PositiveParserAPI(client=client, max_concurrent=10)
-        await save_products_to_excel(parser, "Товары.xlsx")
-
+        parser = PositiveParserAPI(client=client, max_concurrent=100)
+        await save_products_to_excel(parser, filename="positiv_products.xlsx")
 
 asyncio.run(main())
