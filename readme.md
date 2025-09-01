@@ -17,7 +17,7 @@
 1. Установите [Poetry](https://python-poetry.org/docs/).
 2. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/username/positive-parser.git
+   git clone https://github.com/Win-freez/positive-parser.git](https://github.com/Win-freez/price_parser
    cd positive-parser
 
 3. Установите зависимости:
