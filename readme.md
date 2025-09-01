@@ -33,7 +33,7 @@
 ## Использование
 
 ```bash
-poetry run python app/main.py
+poetry run python -m app.main
 ```
 #### После выполнения будет создан файл positiv_products.xlsx с товарами, сгруппированными по категориям.
 
@@ -50,7 +50,3 @@ poetry run python app/main.py
 2. Информацию об ошибках уровня ERROR
 3. Информацию об ошибках уровня CRITICAL
 
-## Тесты
-```bash
-poetry run pytest
-```
