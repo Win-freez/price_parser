@@ -1,0 +1,324 @@
+[2025-09-01 09:48:16.841]    positiv:198 ERROR   - Ошибка валидации 01HCVRA307ZEXK80WQJMVZAS3Y: 1 validation error for ProductSchema
+monthWarranty
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+[2025-09-01 09:48:25.873]    positiv:198 ERROR   - Ошибка валидации 01HCVR8VP7B2SH7M7AJGPKQGY6: 1 validation error for ProductSchema
+monthWarranty
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+[2025-09-01 09:48:27.623]    positiv:198 ERROR   - Ошибка валидации 01JJ1SEAMD7NT7DS56C0696D29: 1 validation error for ProductSchema
+images.0
+  Input should be a valid URL, relative URL without a base [type=url_parsing, input_value='null', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/url_parsing
+[2025-09-01 09:48:29.146]    positiv:103 WARNING - Не удалось получить продукты для категории 01JC3X9RM82SWBY9B4XKNKNHNM
+[2025-09-01 09:48:34.349]    positiv:198 ERROR   - Ошибка валидации 01HCVR93B048KTWKAHQTSK2N60: 1 validation error for ProductSchema
+monthWarranty
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+[2025-09-01 09:48:35.756]    positiv:198 ERROR   - Ошибка валидации 01HCVRABVQGYMY9V2ARTCE8H55: 1 validation error for ProductSchema
+monthWarranty
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+[2025-09-01 09:48:38.605]    positiv:103 WARNING - Не удалось получить продукты для категории 01J5NAA4SGXBS71Y86SAC1Z2ZQ
+[2025-09-01 09:48:41.290]    positiv:198 ERROR   - Ошибка валидации 01HND5R18A01YKHAQK8C7PESFV: 1 validation error for ProductSchema
+monthWarranty
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+[2025-09-01 09:48:54.586]    positiv:198 ERROR   - Ошибка валидации 01HWKJGZZBRB7EKWMD28DXRGJQ: 1 validation error for ProductSchema
+images.0
+  Input should be a valid URL, relative URL without a base [type=url_parsing, input_value='null', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/url_parsing
+[2025-09-01 09:49:57.265]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQH8SMA2VRC37QHW7FNQWG
+[2025-09-01 09:49:57.266]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.183(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.267]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQHD7X1E57VAHC0Q96RFYN
+[2025-09-01 09:49:57.267]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.199(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.273]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQFC94TWH7TNHY5X4ZGRQB
+[2025-09-01 09:49:57.273]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.191(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.274]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5MEMH36780N8822MSAF1T
+[2025-09-01 09:49:57.274]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.191(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.280]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5S6FEKPPM0KQTQPNED545
+[2025-09-01 09:49:57.280]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.197(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.285]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWKJKZ7Z0XQZF4HVSM62MEX2
+[2025-09-01 09:49:57.285]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.201(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.285]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JQRD715YMAC2DJ0117YR85E1
+[2025-09-01 09:49:57.286]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.202(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.287]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JY6TQ8HBSN3GWKC8HDPHQY6F
+[2025-09-01 09:49:57.287]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.214(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.288]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JSK6FJRCZ0RHWG1S349MAW5W
+[2025-09-01 09:49:57.288]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.203(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.290]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZY79FK1YFX8VW83P7E115EJ
+[2025-09-01 09:49:57.290]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.205(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.291]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQGW150QAXDF9CSEJ2V4SW
+[2025-09-01 09:49:57.291]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.220(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.291]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J37P45V2GH6M5XX7JM37WMER
+[2025-09-01 09:49:57.291]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.209(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.291]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQGNDQ0YBD7JA9ZMKFX9E4
+[2025-09-01 09:49:57.292]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.220(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.292]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQH3CNQYR1KDSR6N8WJ9VW
+[2025-09-01 09:49:57.292]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.219(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.292]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J0ZK4TWDN9NCZZSR0FS0KWB2
+[2025-09-01 09:49:57.292]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.220(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.292]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQGC9D5D8XDZ98N59MW3GJ
+[2025-09-01 09:49:57.293]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.227(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.299]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQFC5FQDAAV6SCYPPCPMMJ
+[2025-09-01 09:49:57.299]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.214(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.299]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQG4BRPMVBYYZZD05W4ZD7
+[2025-09-01 09:49:57.299]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.233(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.299]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5NXEMDMK66RBADP73G1CC
+[2025-09-01 09:49:57.299]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.216(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.299]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JSK6FSWWHDT9V9MJKN2TCMFS
+[2025-09-01 09:49:57.299]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.228(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.301]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVQGBP7E0QAMPWF44XN1YXZ
+[2025-09-01 09:49:57.301]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.219(s), this was the 1st time calling it.
+[2025-09-01 09:49:57.301]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/get-by-category/01HDR02D74083MV6QVB3VSAKE6
+[2025-09-01 09:49:57.301]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.175(s), this was the 1st time calling it.
+[2025-09-01 09:50:14.075]    positiv:198 ERROR   - Ошибка валидации 01HCVR9B3XF6NKXWWGJ9RV3EFS: 1 validation error for ProductSchema
+monthWarranty
+  Input should be a valid string [type=string_type, input_value=1, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+[2025-09-01 09:50:29.382]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9B2MKCQBCN8XS6DYAC9X
+[2025-09-01 09:50:29.383]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.743(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.384]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5ZYTWBR9SW54WQKZDMQJV
+[2025-09-01 09:50:29.384]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.745(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.386]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR814EAWZSSFGD8E87TPHH
+[2025-09-01 09:50:29.387]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.746(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.387]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVRA022P56K50AMQ7Q3WF5Y
+[2025-09-01 09:50:29.387]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.747(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.388]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J5N5Q3DP3VXT95CN9TBZCY0Y
+[2025-09-01 09:50:29.388]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.747(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.389]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HR0T49QPGBPM7V7D6R1GZ89M
+[2025-09-01 09:50:29.389]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.747(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.389]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWKJWJE045GDWNZQT3WAB3RD
+[2025-09-01 09:50:29.389]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.749(s), this was the 1st time calling it.
+[2025-09-01 09:50:29.392]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/get-by-category/01HSP33HHFNJFPW5TFNDGPZX6N
+[2025-09-01 09:50:29.392]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.023(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.649]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5Z4P163YYNKTCE6VHKZ2J
+[2025-09-01 09:50:58.650]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.059(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.759]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5VENR31KAEEXBCC05MM4E
+[2025-09-01 09:50:58.759]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.141(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.760]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4TVDNX8SEC1FVS597J0CX
+[2025-09-01 09:50:58.760]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.141(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.763]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HX319AJFXYDVMAD7HZEDHBMY
+[2025-09-01 09:50:58.763]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.146(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.763]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5WKJNS3M446JTRD4MYV9V
+[2025-09-01 09:50:58.764]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.151(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.764]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR93FY57ESQC0KFYDW28X5
+[2025-09-01 09:50:58.764]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.147(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.765]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JZAMK453PFS5A09H50ZZ6N5P
+[2025-09-01 09:50:58.765]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.147(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.765]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4ZMVQR2RVSHSQ4Z8DMQXX
+[2025-09-01 09:50:58.765]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.144(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.766]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9B8QPKJPTZ8XFNSVTDN3
+[2025-09-01 09:50:58.766]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.142(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.768]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YFFBZWDVTSPX0WZ79AKG
+[2025-09-01 09:50:58.768]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.148(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.769]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YSSHQQEG60KC0DMRHVMY
+[2025-09-01 09:50:58.769]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.144(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.826]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4X5PNRW3H7BW8HZV8H63Y
+[2025-09-01 09:50:58.827]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.243(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.827]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7ZWJTAJZNEVXVMXJ8H02
+[2025-09-01 09:50:58.828]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.235(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.828]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YFEA8EMZRJ8G38AHZ3BH
+[2025-09-01 09:50:58.828]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.240(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.832]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JZAKRA85PDHESKNHD8XFK86B
+[2025-09-01 09:50:58.832]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.232(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.832]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5ZKCGQDF76KTBG0V5ZEWW
+[2025-09-01 09:50:58.832]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.238(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.835]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7YE5AY1CAADXY9234CD1
+[2025-09-01 09:50:58.836]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.240(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.836]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR848JNGPRP4SXR83FF1KW
+[2025-09-01 09:50:58.836]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.242(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.836]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR8C7JWQC33GE8AP7WCHJ2
+[2025-09-01 09:50:58.836]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.233(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.840]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7MHQSJ84WF6RSA7DSQGD
+[2025-09-01 09:50:58.841]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.240(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.842]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND62FV9MCKEMKEXZSVHP6E2
+[2025-09-01 09:50:58.842]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.244(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.842]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9ZSRYEN3SDX03M1R52YM
+[2025-09-01 09:50:58.842]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.217(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.843]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZY7QDXFZKY2CSMG4B2ZRJH9
+[2025-09-01 09:50:58.844]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.237(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.844]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5TWCJF2SRRY762EZFJZRH
+[2025-09-01 09:50:58.844]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.245(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.855]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J1WEE9TFM4XCYPAS9DRK0KNP
+[2025-09-01 09:50:58.855]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.249(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.855]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4YT36NX5HP8364RF52G6K
+[2025-09-01 09:50:58.856]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.251(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.856]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5ZKNQVT7ZMVYXAMX6J2AS
+[2025-09-01 09:50:58.856]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.264(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.856]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J0BHF5Z4QAN3F87KZZCYXBAD
+[2025-09-01 09:50:58.856]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.248(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.856]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7Q2NK2NJ74AM7HFXRXT4
+[2025-09-01 09:50:58.856]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.259(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.856]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5TWBVMN74S3SEWTWNJPTD
+[2025-09-01 09:50:58.857]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.269(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.857]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JY1841AQNFCQ2PXQ8F6DMVH4
+[2025-09-01 09:50:58.857]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.264(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.857]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J5X79DZZBP5B2AEXZJPCS7VZ
+[2025-09-01 09:50:58.857]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.857]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60SX3NYVTD4P49983FAKH
+[2025-09-01 09:50:58.857]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.250(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.857]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZYJ4X65C43DJP94GKWRB7R4
+[2025-09-01 09:50:58.857]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.249(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.858]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YTR46RK63K8TEQZXVB6S
+[2025-09-01 09:50:58.858]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.266(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.873]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4Y0GG9H23DR27E3VAB9DQ
+[2025-09-01 09:50:58.873]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.278(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.873]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4WNE757FQVV56KDR9RTD2
+[2025-09-01 09:50:58.873]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.277(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.874]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HQ4FQAK5BYTQACWNP51ENDRZ
+[2025-09-01 09:50:58.874]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.270(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.874]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60SW2AMCTC3ENECF9Z6QB
+[2025-09-01 09:50:58.874]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.273(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.874]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60YB7BRP6H39FQNW83WJV
+[2025-09-01 09:50:58.874]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.874]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YSN1K4DQVBDM23KNG8HG
+[2025-09-01 09:50:58.874]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.874]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J0BHCA5Y10N9CGF8RM3WSK3Y
+[2025-09-01 09:50:58.874]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.875]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP59WAHE0P3D374NTKKCGEH
+[2025-09-01 09:50:58.875]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.292(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.875]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND6082RS8PKK7R9P5YTBHY1
+[2025-09-01 09:50:58.875]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.250(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.875]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7YDKBKA3EZWGN635P21Q
+[2025-09-01 09:50:58.875]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.270(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.875]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JPJ0S3QRJDBEA2KFH2TWBM04
+[2025-09-01 09:50:58.875]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.875]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HSCJTH7EGTTYQT3QWEA7V44A
+[2025-09-01 09:50:58.875]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.264(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.875]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9ZWCF4PP0WX5FS4K0EMS
+[2025-09-01 09:50:58.875]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.277(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.876]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9CZW9YJHAF5KN50G2D00
+[2025-09-01 09:50:58.876]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.876]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60Q7NVGX76K4YDS958SC4
+[2025-09-01 09:50:58.876]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.264(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.876]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4ZVMDHMX7DQYB93VCABG7
+[2025-09-01 09:50:58.876]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.270(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.876]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HNP4KES2R8WZN1S74Y84VSZV
+[2025-09-01 09:50:58.876]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.876]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5VERA8407WMCK5EXDKMAQ
+[2025-09-01 09:50:58.876]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.263(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.879]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60SXFK67S70H9SM4TABK3
+[2025-09-01 09:50:58.879]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.266(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.879]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND6037Z61ZRS3F36SNMSJ7Y
+[2025-09-01 09:50:58.879]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.264(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.879]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9SRT1WCHETN9PYRXX1ZF
+[2025-09-01 09:50:58.879]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.880]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR8WYEHWCTYT75EMH5JJ21
+[2025-09-01 09:50:58.880]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.285(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J5X79ER91FSQP5KV1HR02B47
+[2025-09-01 09:50:58.887]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.262(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND6037Q1SHYBWY4XG4WBETG
+[2025-09-01 09:50:58.887]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.277(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7YARZV3TVQGGCRAP5JKC
+[2025-09-01 09:50:58.887]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.302(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND62GDFNTW52MJAGZM84YX5
+[2025-09-01 09:50:58.887]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.272(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9CNHF0FQTT84DVCTN98G
+[2025-09-01 09:50:58.887]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.278(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YN6SSXXVJTDCJC0J1MFV
+[2025-09-01 09:50:58.887]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.274(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.887]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND6198SDBXWE5B6CSR5BNKA
+[2025-09-01 09:50:58.888]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.273(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.888]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9V7EC0VTEDCFAMEWJN6A
+[2025-09-01 09:50:58.888]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.272(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.888]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9ZTS2KM9HYVXKEXM50EA
+[2025-09-01 09:50:58.888]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.272(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.888]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5XSYM6VV4GT5D03AXFVER
+[2025-09-01 09:50:58.888]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.277(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.888]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZYJ4X69RD9PEYXXPFAWKE5C
+[2025-09-01 09:50:58.888]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.271(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5Z4NNCAFMBWVCKS9MAB3C
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.269(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR7ZCS3N1CT8PKF5CXAF8H
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JEXABSDVEKXF248CD2BJRX60
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.272(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9ZR6X07PEKNVRJRJRMZR
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.271(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9ZWWWKJ0HP197NJ30X5D
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.274(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4ZVKSHHAWGBP2BXXJYY5G
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60SWP3243SQM2XEN8MADJ
+[2025-09-01 09:50:58.889]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.889]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4ZV2TF10P2PPPN50WPN96
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.270(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5TWCY9N66HB75YFN737MD
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVRAHRQ6K1CWGMEA73WA3PW
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5VFB585GJ71ZC98T3210H
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND60SX7Y5K163DH4N29MPVQ
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.269(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5WJZ9772B25GWRTYT5RX3
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9ABH0V9QMET6QANSM6JJ
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.890]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP4VT1G9AG075KZHTF9NWFF
+[2025-09-01 09:50:58.890]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.891]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5W3HXX55KNKZQ4PV4VED0
+[2025-09-01 09:50:58.891]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.265(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.892]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZM84CHEB9JZ40H4QVGPJ3PE
+[2025-09-01 09:50:58.893]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.267(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.893]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR90CD4MWGCX15N3A7ZT1K
+[2025-09-01 09:50:58.893]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.893]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVRAA161JB4D5CGBF8DNHKH
+[2025-09-01 09:50:58.893]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.893]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5TQH9220VN27ZAK6D5ATF
+[2025-09-01 09:50:58.893]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.893]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HX319AK67QS5536G8YVBEY09
+[2025-09-01 09:50:58.893]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.893]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5W8XX4HY5DMW1K4RMNBS7
+[2025-09-01 09:50:58.893]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.893]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HNP4KEY1SB0J2CS9P7CWVGSM
+[2025-09-01 09:50:58.894]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.894]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5TQHHKP114CQ0X8YHMPJT
+[2025-09-01 09:50:58.894]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.268(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.894]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND618DQZ8CZQ9B0JGWHTKX9
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.351(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HSCJX9JT1KPC5NNE2Q7QAX16
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9S87ZWA88KZRASZMFER7
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HCVR9XMJS8PVKHE5EA5MV67A
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HQ4FR60P3EFCVRWHZJ0ZT39X
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YSN7DYYT6F5R9KC3QXAM
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HXARC8F0842SKWQ80J45PFPV
+[2025-09-01 09:50:58.977]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:50:58.977]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HWP59WBN84SMKF1PYVQGH85A
+[2025-09-01 09:50:58.978]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.352(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.118]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01JN5XTQ7KCSAVZ0GX5HS4Y5VE
+[2025-09-01 09:51:29.118]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.024(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.119]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J37CCPBH8F26CGTV71J1GYJD
+[2025-09-01 09:51:29.119]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.032(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.121]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5XFMDA5DHYHYWH5M0KYVC
+[2025-09-01 09:51:29.121]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.031(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.122]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND62GCRADZ8PXHV20HDC65H
+[2025-09-01 09:51:29.122]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.036(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.124]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J37CCPDZFEHNSGJXC6M5634G
+[2025-09-01 09:51:29.124]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.031(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.125]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND61W3RDBWFBP13P1AEPZWC
+[2025-09-01 09:51:29.125]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.036(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.126]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND62GD4K15AP3KTKFXCREKD
+[2025-09-01 09:51:29.126]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.024(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.128]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZY7KX5P6FDWXNBB57T1YPGX
+[2025-09-01 09:51:29.128]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.028(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.129]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J7ZMKQ9VTZTFA1ZHGZ5QE4BB
+[2025-09-01 09:51:29.129]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.035(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.129]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01J7ZM9F1VPFMMQN4B8PFFJ95X
+[2025-09-01 09:51:29.129]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.027(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.129]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5YZ7K4S9PNX3FZ9WXCVVQ
+[2025-09-01 09:51:29.130]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.026(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.130]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5X9HBZJTDEYH2SZ8R6R4W
+[2025-09-01 09:51:29.130]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.026(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.130]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HND5TW5ZDPGZ0ENBV3ZAACGQ
+[2025-09-01 09:51:29.130]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.030(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.131]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZSKS2WR6GP24GC1FE6B9NB9
+[2025-09-01 09:51:29.131]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.039(s), this was the 1st time calling it.
+[2025-09-01 09:51:29.131]    positiv:48  ERROR   - Timeout при запросе https://api.positive.ooo/api/v1/product/01HZY7XRNVHBGBEH4BKAZF8K8M
+[2025-09-01 09:51:29.131]      after:44  WARNING - Finished call to 'app.parsers.positiv.positiv.PositiveParserAPI.fetch' after 15.040(s), this was the 1st time calling it.

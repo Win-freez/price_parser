@@ -1,4 +1,5 @@
 import asyncio
+import logging
 from pathlib import Path
 
 import httpx
@@ -7,6 +8,7 @@ from openpyxl.styles import Font
 
 from app.parsers.positiv.positiv import PositiveParserAPI
 
+logger = logging.getLogger(__name__)
 BASE_DIR = Path(__file__).parent.parent.parent.parent
 
 
@@ -55,13 +57,18 @@ async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
                     ]
                     ws.append(row)
 
-                print(f"Записаны {len(products)} товаров категории {category_name} на листе {main_category.name}")
+                logger.info(
+                    f"Записаны %d товаров категории %s на листе %s",
+                    len(products),
+                    category_name,
+                    main_category.name
+                )
 
     await asyncio.gather(*(process_category(c) for c in main_categories))
 
     wb.save(BASE_DIR / filename)
     wb.close()
-    print(f"Excel сохранён в {filename}")
+    logger.info(f"Excel сохранён в %s", filename)
 
 
 async def main():

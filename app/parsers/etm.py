@@ -73,10 +73,3 @@ class EtmParser(Parser):
         await option.click()
 
 
-async def a():
-    async with Parser.get_browser() as browser:
-        e = EtmParser(browser, "розетка белая")
-        return await e.search_products()
-
-
-print(asyncio.run(a()))

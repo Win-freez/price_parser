@@ -5,19 +5,13 @@ from typing import Any, AsyncGenerator, cast
 
 from httpx import AsyncClient, TimeoutException, HTTPError
 from pydantic import ValidationError
-from tenacity import retry, stop_after_attempt, stop_after_delay, after_log
+from tenacity import retry, stop_after_attempt, after_log
 
+from app.logging_config import setup_logging
 from app.schemas.positiv.category import CategorySchema
 from app.schemas.positiv.product import ProductCategorySchema, ProductSchema
 
-logging.basicConfig(
-    level=logging.INFO,
-    datefmt="%Y-%m-%d %H:%M:%S",
-    format="[%(asctime)s.%(msecs)03d] %(module)10s:%(lineno)-3d"
-           " %(levelname)-7s - %(message)s",
-    handlers=[logging.StreamHandler()],
-)
-
+setup_logging()
 logger = logging.getLogger(__name__)
 
 
