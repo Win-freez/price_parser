@@ -7,11 +7,9 @@ from httpx import AsyncClient, TimeoutException, HTTPError
 from pydantic import ValidationError
 from tenacity import retry, stop_after_attempt, after_log
 
-from app.logging_config import setup_logging
 from app.schemas.positiv.category import CategorySchema
 from app.schemas.positiv.product import ProductCategorySchema, ProductSchema
 
-setup_logging()
 logger = logging.getLogger(__name__)
 
 

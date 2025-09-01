@@ -71,10 +71,3 @@ async def save_products_to_excel(parser: PositiveParserAPI, filename: str):
     logger.info(f"Excel сохранён в %s", filename)
 
 
-async def main():
-    async with httpx.AsyncClient() as client:
-        parser = PositiveParserAPI(client=client, max_concurrent=100)
-        await save_products_to_excel(parser, filename="positiv_products.xlsx")
-
-
-asyncio.run(main())
